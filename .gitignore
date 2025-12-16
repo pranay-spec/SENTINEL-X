@@ -1,4 +1,4 @@
-# Virtual environment
+# Virtual environments
 venv/
 .venv/
 
@@ -9,3 +9,9 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# VS Code
+.vscode/
