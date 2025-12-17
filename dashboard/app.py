@@ -2146,7 +2146,8 @@ def main():
     # --- FIXED HEADER: Renders HTML correctly ---
     # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     # --- FIXED HEADER ---
-    st.markdown("""
+    # --- FIXED HEADER: Uses inspect.cleandoc to remove indentation bugs ---
+    html_code = inspect.cleandoc("""
     <div style="
         margin-top: 60px;
         margin-bottom: 20px;
@@ -2172,7 +2173,9 @@ def main():
             </p>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """)
+    
+    st.markdown(html_code, unsafe_allow_html=True)
     
     # Create tabs for different analyses
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
