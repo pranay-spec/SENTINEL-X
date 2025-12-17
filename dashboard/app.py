@@ -2046,14 +2046,15 @@ def main():
     with col1:
         # --- 1. FLEXBOX HEADER (Fixed Spacing & No "Undefined") ---
         # Added 'margin-top: 40px' to push it away from the metric cards above
+        # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
         map_header_html = f"""
         <div style="
             background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
             border: 1px solid rgba(0, 243, 255, 0.2);
             border-radius: 15px;
             padding: 20px;
-            margin-top: 40px;           /* <--- FIX: Pushes map down to prevent overlap */
-            margin-bottom: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;           /* <--- CHANGED: Increased from 20px to 40px for better spacing */
             display: flex;
             flex-direction: column;
             align-items: center;
