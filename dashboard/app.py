@@ -1753,7 +1753,7 @@ def main():
         
         status_html = f"""
         <div style='background: linear-gradient(135deg, rgba(0, 170, 0, 0.1), rgba(0, 100, 0, 0.1)); 
-                    padding: 1rem; border-radius: 10px; border-left: 4px solid #00aa00;'>
+                    padding: 1rem; border-radius: 10px; border-left: 4px solid #00aa00; margin-bottom: 20px;'>
             <div style='display: flex; justify-content: space-between; align-items: center;'>
                 <div>
                     <strong style='color: white;'>🟢 OPERATIONAL</strong><br>
