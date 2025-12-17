@@ -2141,25 +2141,25 @@ def main():
             config={"displayModeBar": "hover", "displaylogo": False}
         )
     # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
+    # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     st.markdown("""
     <div style="
         margin-top: 60px;
         margin-bottom: 20px;
-        padding: 20px; 
-        background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%); 
-        border-radius: 15px; 
+        padding: 20px;
+        background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
+        border-radius: 15px;
         border: 1px solid rgba(0, 243, 255, 0.2);
         box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
         display: flex;
-        flex-direction: row;       /* <--- Forces side-by-side layout */
-        align-items: center;       /* Vertically centers items */
-        gap: 20px;">               /* Space between icon and text */
+        align-items: center;
+        gap: 20px;">
         
-        <div style="font-size: 2.2rem; line-height: 1; min-width: 50px; text-align: center;">
+        <div style="font-size: 2.5rem; line-height: 1;">
             🔍
         </div>
         
-        <div style="flex-grow: 1;">
+        <div>
             <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.3rem; line-height: 1.2;">
                 ADVANCED THREAT ANALYSIS & INSIGHTS
             </h3>
@@ -2168,7 +2168,7 @@ def main():
             </p>
         </div>
     </div>
-    """.replace('\n', ' '), unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
     
     # Create tabs for different analyses
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
