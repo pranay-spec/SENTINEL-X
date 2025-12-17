@@ -1726,7 +1726,6 @@ def main():
             # ✅ Fixed
             if st.button("🌍 International", use_container_width=True):
                 st.session_state.location_filter = 'international'
-        
         # Export Section
         st.markdown("<div class='section-header'>💾 DATA EXPORT</div>", unsafe_allow_html=True)
         
@@ -2375,7 +2374,7 @@ def main():
             """, unsafe_allow_html=True)
             
             # Export account data
-            if st.button("📥 Export Account Data", width='stretch', use_container_width=True):
+            if st.button("📥 Export Account Data", use_container_width=True):
                 account_csv = account_stats.to_csv(index=False)
                 st.download_button(
                     label="⬇️ Download Account CSV",
