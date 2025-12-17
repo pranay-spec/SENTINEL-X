@@ -2140,9 +2140,10 @@ def main():
             use_container_width=True,
             config={"displayModeBar": "hover", "displaylogo": False}
         )
+    # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     st.markdown("""
     <div style="
-        margin-top: 60px;              /* <--- This margin pushes it down below the graph */
+        margin-top: 60px;
         margin-bottom: 20px;
         padding: 20px; 
         background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%); 
@@ -2150,15 +2151,24 @@ def main():
         border: 1px solid rgba(0, 243, 255, 0.2);
         box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
         display: flex;
-        align-items: center;
-        gap: 15px;">
-        <span style="font-size: 2rem;">🔍</span>
-        <div>
-            <h3 style="margin: 0; color: white; letter-spacing: 1px;">ADVANCED THREAT ANALYSIS & INSIGHTS</h3>
-            <p style="margin: 0; color: #94a3b8; font-size: 0.9rem;">Deep dive into active threat vectors and regional data</p>
+        flex-direction: row;       /* <--- Forces side-by-side layout */
+        align-items: center;       /* Vertically centers items */
+        gap: 20px;">               /* Space between icon and text */
+        
+        <div style="font-size: 2.2rem; line-height: 1; min-width: 50px; text-align: center;">
+            🔍
+        </div>
+        
+        <div style="flex-grow: 1;">
+            <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.3rem; line-height: 1.2;">
+                ADVANCED THREAT ANALYSIS & INSIGHTS
+            </h3>
+            <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 0.9rem;">
+                Deep dive into active threat vectors and regional data
+            </p>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """.replace('\n', ' '), unsafe_allow_html=True)
     
     # Create tabs for different analyses
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
