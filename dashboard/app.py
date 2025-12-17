@@ -835,13 +835,22 @@ def generate_sample_data(num_records=200):
     
     # Create patterns
     peak_hours = [14, 15, 16, 20, 21]
+    # Fixed: Create a list of non-peak hours explicitly
+    non_peak_hours = [h for h in range(24) if h not in peak_hours]
+    
+    # Combined list of 24 hours (5 peak + 19 non-peak)
+    all_hours_sorted = peak_hours + non_peak_hours
+    
+    # Probabilities must match the length of all_hours_sorted (24 items)
+    hour_probs = [0.15] * 5 + [0.25/19] * 19
+    
     indian_cities = ['Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Hyderabad', 
                      'Kolkata', 'Pune', 'Ahmedabad', 'Jaipur', 'Lucknow']
     international_cities = ['London', 'New York', 'Dubai', 'Karachi', 'Islamabad']
     
     for i in range(num_records):
-        # Determine if it's a peak hour
-        hour_choice = np.random.choice(peak_hours + list(range(24)), p=[0.15, 0.15, 0.15, 0.15, 0.15] + [0.25/19]*19)
+        # Determine if it's a peak hour using the fixed lists
+        hour_choice = np.random.choice(all_hours_sorted, p=hour_probs)
         
         # Location distribution
         if i < int(num_records * 0.6):
@@ -925,12 +934,12 @@ def generate_sample_data(num_records=200):
         # Generate timestamp with patterns
         days_ago = np.random.randint(0, 30)
         hours_offset = hour_choice + np.random.randint(-2, 3)
-        timestamp = base_date + timedelta(days=days_ago, hours=hours_offset)
+        timestamp = base_date + timedelta(days=days_ago, hours=int(hours_offset))
         
         # Determine language based on location
         if location in indian_cities:
             language = np.random.choice(['en', 'hi', 'ta', 'te', 'bn', 'mr', 'gu'], 
-                                       p=[0.5, 0.2, 0.1, 0.1, 0.05, 0.03, 0.02])
+                                        p=[0.5, 0.2, 0.1, 0.1, 0.05, 0.03, 0.02])
         else:
             language = 'en'
         
