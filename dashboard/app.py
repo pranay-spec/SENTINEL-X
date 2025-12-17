@@ -2144,6 +2144,7 @@ def main():
     # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     # --- FIXED HEADER: Renders HTML correctly ---
+    # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     st.markdown("""
     <div style="
         margin-top: 60px;
@@ -2170,7 +2171,7 @@ def main():
             </p>
         </div>
     </div>
-    """, unsafe_allow_html=True)   # <--- THIS PART WAS MISSING
+    """, unsafe_allow_html=True)  # <--- Essential for rendering HTML
     
     # Create tabs for different analyses
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
