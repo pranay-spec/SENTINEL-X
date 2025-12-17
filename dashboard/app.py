@@ -2374,7 +2374,8 @@ def main():
             """, unsafe_allow_html=True)
             
             # Export account data
-            if st.button("📥 Export Account Data", use_container_width=True):
+            # Added unique key='tab2_export'
+            if st.button("📥 Export Account Data", use_container_width=True, key='tab2_export'):
                 account_csv = account_stats.to_csv(index=False)
                 st.download_button(
                     label="⬇️ Download Account CSV",
@@ -2572,7 +2573,8 @@ def main():
                 index=0
             )
             
-            if st.button("📥 Export Account Data", use_container_width=True):
+            # Added unique key='tab5_export'
+            if st.button("📥 Export Account Data", use_container_width=True, key='tab5_export'):
                 with st.spinner(f"Generating {export_format} export..."):
                     # Prepare data based on selections
                     export_data = filtered_data[include_columns] if include_columns else filtered_data
