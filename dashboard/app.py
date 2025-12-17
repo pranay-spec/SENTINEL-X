@@ -2105,20 +2105,20 @@ def main():
             }
         )
     with col2:
-        # 1. HEADER BOX
+        # 1. HEADER BOX (Fixed: No Blue Line)
         timeline_header_html = f"""
         <div style="
             background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
             border: 1px solid rgba(0, 243, 255, 0.2);
             border-radius: 15px;
             padding: 15px;
-            margin-top: 40px;
-            margin-bottom: 0px;  /* Removed bottom margin to keep it tight */
+            margin-top: 20px;            /* Aligned with map margin */
+            margin-bottom: 0px;
             text-align: center;
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
             position: relative;
             overflow: hidden;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #00f3ff, transparent);"></div>
+            
             <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.2rem;">
                 📈 THREAT EVOLUTION TIMELINE
             </h3>
