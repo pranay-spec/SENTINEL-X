@@ -2048,14 +2048,15 @@ def main():
         # Added 'margin-top: 40px' to push it away from the metric cards above
         # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
         # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
+        # --- 1. FLEXBOX HEADER (Cleaner, No Blue Line) ---
         map_header_html = f"""
         <div style="
             background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
             border: 1px solid rgba(0, 243, 255, 0.2);
             border-radius: 15px;
             padding: 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;           /* <--- CHANGED: Increased from 20px to 40px for better spacing */
+            margin-top: 20px;              /* <--- REDUCED: Changed from 40px to 20px for better fit */
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -2064,8 +2065,6 @@ def main():
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
             position: relative;
             overflow: hidden;">
-            
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #00f3ff, transparent);"></div>
             
             <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.4rem; line-height: 1.2;">
                 🌍 GLOBAL THREAT INTELLIGENCE MAP
