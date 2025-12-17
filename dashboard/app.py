@@ -2147,32 +2147,33 @@ def main():
     # --- FIXED HEADER: ICON AND TEXT SIDE-BY-SIDE ---
     # --- FIXED HEADER ---
     # --- FIXED HEADER: Uses textwrap.dedent to fix indentation bug ---
+    # --- FIXED HEADER: Uses textwrap to strip indentation ---
     header_html = textwrap.dedent("""
-    <div style="
-        margin-top: 60px;
-        margin-bottom: 20px;
-        padding: 20px;
-        background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
-        border-radius: 15px;
-        border: 1px solid rgba(0, 243, 255, 0.2);
-        box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
-        display: flex;
-        align-items: center;
-        gap: 20px;">
-        
-        <div style="font-size: 2.5rem; line-height: 1;">
-            🔍
+        <div style="
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;">
+            
+            <div style="font-size: 2.5rem; line-height: 1;">
+                🔍
+            </div>
+            
+            <div>
+                <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.3rem; line-height: 1.2;">
+                    ADVANCED THREAT ANALYSIS & INSIGHTS
+                </h3>
+                <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 0.9rem;">
+                    Deep dive into active threat vectors and regional data
+                </p>
+            </div>
         </div>
-        
-        <div>
-            <h3 style="margin: 0; color: white; letter-spacing: 1px; font-size: 1.3rem; line-height: 1.2;">
-                ADVANCED THREAT ANALYSIS & INSIGHTS
-            </h3>
-            <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 0.9rem;">
-                Deep dive into active threat vectors and regional data
-            </p>
-        </div>
-    </div>
     """)
     
     st.markdown(header_html, unsafe_allow_html=True)
