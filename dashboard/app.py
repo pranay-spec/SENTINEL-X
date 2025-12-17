@@ -1672,13 +1672,15 @@ def main():
         
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🔄 Refresh Data", width='stretch', use_container_width=True, type="primary"):
+            # ✅ CORRECT
+            if st.button("🔄 Refresh Data", use_container_width=True, type="primary"):
                 st.session_state.data_loaded = False
                 st.session_state.csv_modified_time = None
                 st.rerun()
         
         with col2:
-            if st.button("🧹 Clear Cache", width='stretch', use_container_width=True):
+            # ✅ CORRECT
+            if st.button("🧹 Clear Cache", use_container_width=True):
                 for key in ['data_loaded', 'current_data', 'csv_modified_time']:
                     if key in st.session_state:
                         del st.session_state[key]
