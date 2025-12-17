@@ -2047,6 +2047,7 @@ def main():
         # --- 1. FLEXBOX HEADER (Fixed Spacing & No "Undefined") ---
         # Added 'margin-top: 40px' to push it away from the metric cards above
         # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
+        # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
         map_header_html = f"""
         <div style="
             background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
