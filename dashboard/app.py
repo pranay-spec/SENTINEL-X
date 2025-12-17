@@ -2572,7 +2572,7 @@ def main():
                 index=0
             )
             
-            if st.button("🔄 Generate Export", width='stretch', use_container_width=True, type="primary"):
+            if st.button("📥 Export Account Data", use_container_width=True):
                 with st.spinner(f"Generating {export_format} export..."):
                     # Prepare data based on selections
                     export_data = filtered_data[include_columns] if include_columns else filtered_data
