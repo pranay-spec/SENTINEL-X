@@ -1,3 +1,4 @@
+import pytz
 import textwrap
 import inspect
 
@@ -1724,6 +1725,9 @@ def main():
             'About': '# 🛡️ SENTINEL-X v6.0\nAdvanced Threat Intelligence Platform'
         }
     )
+
+    # DEFINE INDIAN TIMEZONE
+    ist = pytz.timezone('Asia/Kolkata')
     
     # Apply enhanced CSS
     st.markdown(MODERN_CSS, unsafe_allow_html=True)
@@ -2044,13 +2048,17 @@ def main():
         """, unsafe_allow_html=True)
     
     with col3:
+        # Calculate refresh time (keep this generic or adjust if needed)
         time_to_refresh = max(0, (st.session_state.last_refresh + timedelta(seconds=60) - datetime.now()).seconds)
+        
+        # --- FIX: GET CURRENT TIME IN IST ---
+        current_time_ist = datetime.now(ist)
         
         st.markdown(f"""
         <div class='metric-card' style='text-align: center;'>
-            <p style='margin: 0; font-size: 0.9rem; color: #94a3b8;'>🕒 Last Update</p>
-            <h2 style='margin: 0; color: white;' class='metric-value'>{datetime.now().strftime('%H:%M:%S')}</h2>
-            <p style='margin: 0; font-size: 0.8rem; color: #94a3b8;'>{datetime.now().strftime('%Y-%m-%d')}</p>
+            <p style='margin: 0; font-size: 0.9rem; color: #94a3b8;'>🕒 Last Update (IST)</p>
+            <h2 style='margin: 0; color: white;' class='metric-value'>{current_time_ist.strftime('%H:%M:%S')}</h2>
+            <p style='margin: 0; font-size: 0.8rem; color: #94a3b8;'>{current_time_ist.strftime('%Y-%m-%d')}</p>
             <div style='margin-top: 10px; padding: 5px; background: rgba(0, 243, 255, 0.1); border-radius: 5px;'>
                 <p style='margin: 0; font-size: 0.7rem; color: #00f3ff;'>
                 🔄 Next: {time_to_refresh}s | 📡 Live
