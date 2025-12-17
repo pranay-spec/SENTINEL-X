@@ -1719,16 +1719,18 @@ def main():
         st.markdown("**📍 Quick Location Filters**")
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🇮🇳 India Only", width='stretch', use_container_width=True):
+            # ✅ Fixed
+            if st.button("🇮🇳 India Only", use_container_width=True):
                 st.session_state.location_filter = 'india'
         with col2:
-            if st.button("🌍 International", width='stretch', use_container_width=True):
+            # ✅ Fixed
+            if st.button("🌍 International", use_container_width=True):
                 st.session_state.location_filter = 'international'
         
         # Export Section
         st.markdown("<div class='section-header'>💾 DATA EXPORT</div>", unsafe_allow_html=True)
         
-        if st.button("📥 Export All Data", width='stretch', use_container_width=True, type="secondary"):
+        if st.button("📥 Export All Data", use_container_width=True, type="secondary"):
             if st.session_state.current_data is not None:
                 csv_data = st.session_state.current_data.to_csv(index=False)
                 st.session_state.export_data = csv_data
