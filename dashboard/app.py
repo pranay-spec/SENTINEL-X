@@ -2049,14 +2049,15 @@ def main():
         # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
         # --- 1. FLEXBOX HEADER (Fixed Spacing) ---
         # --- 1. FLEXBOX HEADER (Cleaner, No Blue Line) ---
+        # --- 1. FLEXBOX HEADER (Fixed: No Blue Line + Added Spacing) ---
         map_header_html = f"""
         <div style="
             background: linear-gradient(90deg, rgba(16, 20, 31, 0.95) 0%, rgba(30, 35, 50, 0.95) 100%);
             border: 1px solid rgba(0, 243, 255, 0.2);
             border-radius: 15px;
             padding: 20px;
-            margin-top: 20px;              /* <--- REDUCED: Changed from 40px to 20px for better fit */
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;           /* <--- FIX: Adds space between Heading and Map */
             display: flex;
             flex-direction: column;
             align-items: center;
