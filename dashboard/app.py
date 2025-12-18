@@ -1791,7 +1791,7 @@ def main():
                 st.rerun()
         
         # --- DYNAMIC SOURCE LABEL LOGIC ---
-        active_source = "🚀 Connecting..."
+        active_source = "📰 News API (Live)"
         if st.session_state.current_data is not None and not st.session_state.current_data.empty:
             if 'source' in st.session_state.current_data.columns:
                 # Check the source of the first record
